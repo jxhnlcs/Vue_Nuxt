@@ -1,44 +1,29 @@
 <template>
-  <div class="home">
-    <h1>
-      Bem-Vindo(a) ao <span>{{ company }}</span>
-    </h1>
-
-    <NuxtLink to="/posts">Postagens</NuxtLink>
-  </div>
+    <NuxtLink :to="`/posts/${id}`">
+        <h2>{{ title }}</h2>
+    </NuxtLink>
 </template>
 
 <script>
-import '/assets/main.css';
 export default {
-  data() {
-    return {
-      company: 'Blog'
+    props: {
+        id: { type: Number, required: true },
+        title: { type: String, required: true }
     }
-  }
 }
 </script>
 
-<style scoped>
-  h1 {
-    font-size: 2rem;
-  }
-
-  span {
-    color: #2d6cea;
-  }
-
-    a {
+<style>
+a {
+    h2 {
         color:
             #000;
         width: max-content;
         position: relative;
         margin: 1rem 0;
-        font-size: 1.5rem;
-        font-weight: bold;
     }
 
-    a:before {
+    h2:before {
         content: '';
         background-color: #2d6cea;
         width: 105%;
@@ -52,8 +37,8 @@ export default {
         opacity: 0.4;
     }
 
-    a:hover:before {
+    h2:hover:before {
         height: 100%;
     }
-
+}
 </style>

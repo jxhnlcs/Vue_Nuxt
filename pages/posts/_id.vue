@@ -1,18 +1,17 @@
 <template>
-    <div class="posts">
-        <ul>
-            <li v-for="post in posts" :key="post.id">
-                <PostPreview :id="post.id" :title="post.title" />
-            </li>
-        </ul>
+    <div>
+        <h1>{{ post && post.title }}</h1>
+        <p>{{ post && post.description }}</p>
     </div>
 </template>
   
 <script>
 import '/assets/main.css';
+
 export default {
     data() {
         return {
+            post: null, // Inicializa o objeto post como null
             posts: [
                 {
                     id: 1,
@@ -35,14 +34,17 @@ export default {
                     description: 'Descrição da Postagem 4'
                 }
             ]
-        }
+        };
+    },
+
+
+    async fetch() {
+        const postId = this.$route.params.id;
+        this.post = this.posts.find((post) => post.id === parseInt(postId));
     }
-}
+};
+
 </script>
   
-<style scoped>
-li {
-    list-style: none;
-}
-</style>
+<style scoped></style>
   
