@@ -1,4 +1,6 @@
-# blog
+# Vue & Nuxt
+
+Introdução ao VueJS e NuxtJS | Teoria e prática - Cataline
 
 ## Build Setup
 
