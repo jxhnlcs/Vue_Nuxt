@@ -38,6 +38,10 @@ export default {
   modules: [
   ],
 
+  axios: {
+    baseUrl: 'https://localhost:3333'
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }

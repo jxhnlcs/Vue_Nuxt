@@ -3,6 +3,8 @@
     <h1>
       Bem-Vindo(a) ao <span>{{ company }}</span>
     </h1>
+
+    <NuxtLink to="/posts">Postagens</NuxtLink>
   </div>
 </template>
 
