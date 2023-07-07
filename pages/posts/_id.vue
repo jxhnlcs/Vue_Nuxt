@@ -10,6 +10,12 @@
 import '/assets/main.css';
 
 export default {
+    head() {
+        return {
+      title: this.post ? this.post.title : 'Postagem não existe...'
+    };
+  },
+  
     data() {
         return {
             post: null,
