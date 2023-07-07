@@ -22,6 +22,7 @@ export default {
 <style scoped>
 h1 {
   font-size: 2rem;
+  cursor: default;
 }
 
 span {

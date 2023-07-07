@@ -2,7 +2,7 @@
     <div>
         <h1 v-if="post">{{ post.title }}</h1>
         <p v-if="post">{{ post.description }}</p>
-        <h1 v-else>Post não existe.</h1>
+        <h3 v-else>Post não existe.</h3>
     </div>
 </template>
   
@@ -48,5 +48,37 @@ export default {
 
 </script>
   
-<style scoped></style>
+<style scoped>
+h1, p{
+    cursor: default;
+}
+    h3 {
+        color: #000;
+        width: max-content;
+        position: relative;
+        margin: 1rem 0;
+        cursor: default;
+        font-size: 2rem;
+    }
+
+    h3:before {
+        content: '';
+        background-color: #ea2d2d;
+        width: 105%;
+        height: 30%;
+        position: absolute;
+        bottom: 1px;
+        left: 50%;
+        transform: translatex(-50%);
+        z-index: -1;
+        transition: height 0.1s linear;
+        opacity: 0.4;
+        cursor: default;
+    }
+
+    h3:hover:before {
+        height: 100%;
+        cursor: default;
+    }
+</style>
   
