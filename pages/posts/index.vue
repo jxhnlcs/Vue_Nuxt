@@ -36,6 +36,18 @@ export default {
                 }
             ]
         }
+    },
+    head(){
+        return {
+            title: 'Posts do Blog',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'descripton',
+                    content: 'Descrição do meu Blog legal'
+                }
+            ]
+        }
     }
 }
 </script>

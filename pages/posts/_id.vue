@@ -1,7 +1,8 @@
 <template>
     <div>
-        <h1>{{ post && post.title }}</h1>
-        <p>{{ post && post.description }}</p>
+        <h1 v-if="post">{{ post.title }}</h1>
+        <p v-if="post">{{ post.description }}</p>
+        <h1 v-else>Post não existe.</h1>
     </div>
 </template>
   
@@ -11,7 +12,7 @@ import '/assets/main.css';
 export default {
     data() {
         return {
-            post: null, // Inicializa o objeto post como null
+            post: null,
             posts: [
                 {
                     id: 1,
@@ -40,7 +41,8 @@ export default {
 
     async fetch() {
         const postId = this.$route.params.id;
-        this.post = this.posts.find((post) => post.id === parseInt(postId));
+        const foundPost = this.posts.find((post) => post.id === parseInt(postId));
+        this.post = foundPost ? foundPost : null;
     }
 };
 
